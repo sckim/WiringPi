@@ -187,6 +187,11 @@ static void wfi (void) {
   }
 }
 
+/*
+ * doWfi: 인터럽트 대기 기능
+ * - 지정된 핀의 상태 변화 감지
+ * - rising/falling/both 엣지 트리거 지원
+ */
 void doWfi (int argc, char *argv [])
 {
   int pin, mode;
@@ -539,7 +544,7 @@ static void doWrite (int argc, char *argv [])
 
 
 /*
- * doAwriterite:
+ * doAwrite:
  *	gpio awrite pin value
  *********************************************************************************
  */
@@ -906,7 +911,18 @@ static void doVersion (char *argv [])
 int main (int argc, char *argv [])
 {
   int i ;
+  /*
+  # 임시 설정 (현재 쉘 세션에만 적용)
+  export WIRINGPI_DEBUG=1
 
+  # 또는
+  # 영구 설정 (~/.bashrc 파일에 추가)
+  echo "export WIRINGPI_DEBUG=1" >> ~/.bashrc
+  source ~/.bashrc
+
+  환경 변수 확인
+  echo $WIRINGPI_DEBUG
+  */
   if (getenv ("WIRINGPI_DEBUG") != NULL)
   {
     printf ("gpio: wiringPi debug mode enabled\n") ;
