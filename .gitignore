@@ -5,3 +5,6 @@ lib*.so.*
 debian-template/wiringPi
 debian-template/wiringpi-*.deb
 gpio/gpio
+
+# Example: Exclude the executable 'source' from source.c
+*

@@ -39,8 +39,10 @@ int main (void)
 
   for (;;)
   {
+    printf("LED on\n");
     digitalWrite (LED, HIGH) ;	// On
     delay (500) ;		// mS
+    printf("LED off\n");
     digitalWrite (LED, LOW) ;	// Off
     delay (500) ;
   }
