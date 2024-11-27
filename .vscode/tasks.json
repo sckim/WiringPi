@@ -8,9 +8,15 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+                //"readall.c",  //add source codes
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
-                "-lwiringPi"
+                "-lwiringPi",
+                "-lwiringPiDev",
+                "-lpthread",
+                "-lrt",
+                "-lm",      //math lib
+                "-lcrypt"
             ],
             "options": {
                 "cwd": "${fileDirname}"
